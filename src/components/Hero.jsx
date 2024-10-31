@@ -3,6 +3,7 @@ import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
 import profilePicDark from "../assets/profile-pic-dark.png";
 import profilePicLight from "../assets/profile-pic-light.png";
+import resume from "../assets/resume.pdf";
 import { useTheme } from "../context/ThemeContext";
 import WaterDropGrid from "./WaterDropGrid";
 
@@ -48,7 +49,7 @@ const Hero = () => {
               className="my-4 flex flex-row items-center gap-2 sm:gap-4"
             >
               <motion.a
-                href="../../src/assets/resume.pdf"
+                href={resume}
                 target="_blank"
                 whileHover={{
                   scale: 1.15,
