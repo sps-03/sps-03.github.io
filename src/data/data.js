@@ -76,16 +76,6 @@ export const workExperience = [
 export const projects = [
   {
     id: 1,
-    title: "Chat App with MERN Stack",
-    description:
-      "Developed a real-time chat application using Node.js, React, Express.js, MongoDB, and Socket.IO, with responsive design implemented through Tailwind CSS. The app supports instant messaging and dynamic updates across users.",
-    image: chatAppImage,
-    technologies: ["Node.js", "React", "Express.js", "MongoDB", "Socket.IO", "Tailwind CSS"],
-    githubLink: "replace link XXXXX",
-    liveLink: "replace link XXXXX",
-  },
-  {
-    id: 2,
     title: "Dynamic Graph Algorithms for GPU",
     description:
       "Developed a CUDA-based solution for efficient processing of dynamic graphs, later integrating it into the Starplat DSL.",
@@ -94,14 +84,24 @@ export const projects = [
     githubLink: "https://github.com/sps-03/MTP",
   },
   {
-    id: 3,
+    id: 2,
     title: "Swift Typer App",
     description:
       "Developed a sleek and interactive typing app using React, TypeScript, Tailwind CSS, and Framer Motion for a responsive and animated user experience, focusing on enhancing typing speed and accuracy.",
     image: swiftTyperImage,
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubLink: "replace link XXXXX",
-    liveLink: "replace link XXXXX",
+    githubLink: "https://github.com/sps-03/swift-typer",
+    liveLink: "https://sps-03.github.io/swift-typer/",
+  },
+  {
+    id: 3,
+    title: "Chat App with MERN Stack",
+    description:
+      "Developed a real-time chat application using Node.js, React, Express.js, MongoDB, and Socket.IO, with design implemented through Tailwind CSS. The app supports instant messaging and dynamic updates across users.",
+    image: chatAppImage,
+    technologies: ["Node.js", "React", "Express.js", "MongoDB", "Socket.IO", "Tailwind CSS"],
+    githubLink: "https://github.com/sps-03/connectify",
+    liveLink: "https://connectify-6yua.onrender.com/",
   },
   {
     id: 4,

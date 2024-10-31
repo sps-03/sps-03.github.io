@@ -47,14 +47,16 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.5 }}
               className="my-4 flex flex-row items-center gap-2 sm:gap-4"
             >
-              <motion.button
+              <motion.a
+                href="../../src/assets/resume.pdf"
+                target="_blank"
                 whileHover={{
                   scale: 1.15,
                 }}
                 className="cursor-none rounded-md bg-secondary-light px-3 py-1 font-medium text-primary-light dark:bg-secondary-dark dark:text-primary-dark"
               >
                 Resume
-              </motion.button>
+              </motion.a>
 
               <div className="flex flex-row gap-2 text-4xl text-secondary-light dark:text-secondary-dark sm:gap-4">
                 <motion.a whileHover={{ scale: 1.15 }} href="https://www.linkedin.com/in/mohammed-shan" target="_blank">

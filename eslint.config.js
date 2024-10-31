@@ -34,6 +34,7 @@ export default [
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
       "tailwindcss/classnames-order": "warn",
       "tailwindcss/no-custom-classname": "off",
+      "react/prop-types": "off",
     },
   },
 ];

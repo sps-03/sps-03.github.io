@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 const CustomCursor = () => {
-  const [innerPosition, setinnerPosition] = useState({ x: 0, y: 0 });
-  const [outerPosition, setOuterPosition] = useState({ x: 0, y: 0 });
+  const [innerPosition, setinnerPosition] = useState({ x: -20, y: -20 });
+  const [outerPosition, setOuterPosition] = useState({ x: -20, y: -20 });
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
