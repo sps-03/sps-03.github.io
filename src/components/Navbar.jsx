@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-scroll";
 import logoDark from "../assets/logo-dark.png";
@@ -44,6 +44,16 @@ const Navbar = () => {
     activeClass: "text-accent-light dark:text-accent-dark",
   };
 
+  useEffect(() => {
+    const preloadImage = (src) => {
+      const img = new Image();
+      img.src = src;
+    };
+
+    preloadImage(logoDark);
+    preloadImage(logoLight);
+  }, []);
+
   return (
     <div className="fixed left-0 top-0 z-50 w-full bg-primary-light dark:bg-primary-dark">
       <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-xl text-secondary-light dark:text-secondary-dark">
@@ -80,7 +90,9 @@ const Navbar = () => {
 
           <div
             onClick={toggleNav}
-            className={`${isNavOpen ? "" : "sm:hidden"} z-50 rounded-lg border border-tertiary-light border-opacity-20 p-2 text-primary-dark shadow-sm dark:border-tertiary-dark/30 dark:text-primary-light`}
+            className={`${
+              isNavOpen ? "" : "sm:hidden"
+            } z-50 rounded-lg border border-tertiary-light border-opacity-20 p-2 text-primary-dark shadow-sm dark:border-tertiary-dark/30 dark:text-primary-light`}
             aria-label="Toggle Navigation"
           >
             {isNavOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}

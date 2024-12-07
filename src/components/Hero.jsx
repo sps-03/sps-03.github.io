@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
 import profilePicDark from "../assets/profile-pic-dark.png";
@@ -9,6 +10,17 @@ import WaterDropGrid from "./WaterDropGrid";
 
 const Hero = () => {
   const { darkMode } = useTheme();
+
+  useEffect(() => {
+    const preloadImage = (src) => {
+      const img = new Image();
+      img.src = src;
+    };
+
+    preloadImage(profilePicDark);
+    preloadImage(profilePicLight);
+  }, []);
+
   return (
     <div className="min-h-dvh overflow-x-clip bg-primary-light dark:bg-primary-dark">
       <div
@@ -29,7 +41,7 @@ const Hero = () => {
               className="pt-6 text-center text-3xl tracking-tight text-tertiary-light dark:text-tertiary-dark sm:pt-0 sm:text-left sm:text-4xl md:text-5xl"
             >
               HEY, I AM <br />
-              <span className="bg-gradient-to-b from-accent-light to-accent-shade-light  bg-clip-text text-7xl font-medium text-transparent dark:bg-gradient-to-b dark:from-accent-dark dark:to-accent-shade-dark sm:pl-6 sm:text-8xl md:text-9xl lg:pl-10">
+              <span className="text-7xl font-medium text-secondary-light dark:text-secondary-dark sm:pl-6 sm:text-8xl md:text-9xl lg:pl-10">
                 SHAN
               </span>
             </motion.p>
@@ -38,7 +50,7 @@ const Hero = () => {
               sequence={["Developer", 1000, "Creator", 1000, "Problem-Solver", 1000]}
               speed={50}
               repeat={Infinity}
-              className="text-2xl font-semibold text-secondary-light dark:text-secondary-dark sm:text-4xl"
+              className="bg-gradient-to-b from-accent-light to-accent-shade-light bg-clip-text text-2xl font-semibold text-transparent dark:bg-gradient-to-b dark:from-accent-dark dark:to-accent-shade-dark  sm:text-4xl"
             />
 
             <motion.div
