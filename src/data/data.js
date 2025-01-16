@@ -1,3 +1,4 @@
+import chesterImage from "../assets/education-chester.jpg";
 import cusatImage from "../assets/education-cusat.jpg";
 import iitmImage from "../assets/education-iitm.jpg";
 import chatAppImage from "../assets/project-chat-app.jpg";
@@ -11,6 +12,19 @@ import visaImage from "../assets/work-visa.jpg";
 export const education = [
   {
     id: 1,
+    degree: "M.Sc in Cyber Security",
+    university: "University of Chester",
+    startDate: "2025",
+    endDate: "2026",
+    description: [
+      "Focused on advanced topics such as penetration testing, web systems, and software exploitation",
+      "Developing expertise in identifying, analyzing, and mitigating cybersecurity threats",
+      "Pursuing research on secure system design and emerging technologies in cybersecurity",
+    ],
+    image: chesterImage,
+  },
+  {
+    id: 2,
     degree: "M.Tech in Computer Science",
     university: "IIT Madras",
     startDate: "2020",
@@ -23,7 +37,7 @@ export const education = [
     image: iitmImage,
   },
   {
-    id: 2,
+    id: 3,
     degree: "B.Tech in Computer Science",
     university: "School of Engineering, CUSAT",
     startDate: "2014",
