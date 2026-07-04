@@ -18,7 +18,6 @@ Welcome to my personal portfolio website, where I showcase my projects, skills, 
 ## Features
 
 - **Responsive Design**: Works seamlessly on mobile, tablet, and desktop devices.
-- **Dark Mode Toggle**: Switch between light and dark themes.
 - **Interactive Animations**: Animations using Anime.js, Framer Motion, and more.
 - **Custom Cursor**: Smoothly animated custom cursor with inner and outer circles.
 - **WaterDrop Animation**: Clickable grid with cool water-drop animation effect.
@@ -58,7 +57,6 @@ Welcome to my personal portfolio website, where I showcase my projects, skills, 
 - You can modify the content (projects, skills, etc.) by editing the corresponding data in the `src/data/` directory.
 - Update the profile image and other media by replacing the images in the `src/assets/` folder.
 - Customize the website’s color scheme by modifying the `tailwind.config.js` or changing CSS classes directly in the JSX.
-- To modify the **Theme Toggle** component, go to `/src/components/ThemeToggle.jsx`.
 
 ## Contact
 

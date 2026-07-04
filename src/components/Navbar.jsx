@@ -2,14 +2,10 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-scroll";
-import logoDark from "../assets/logo-dark.png";
-import logoLight from "../assets/logo-light.png";
-import useTheme from "../hooks/useTheme";
-import ThemeToggle from "./ThemeToggle";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const { darkMode } = useTheme();
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -43,7 +39,7 @@ const Navbar = () => {
     smooth: true,
     offset: -80,
     duration: 500,
-    activeClass: "text-accent-light dark:text-accent-dark",
+    activeClass: "text-accent",
   };
 
   useEffect(() => {
@@ -52,16 +48,15 @@ const Navbar = () => {
       img.src = src;
     };
 
-    preloadImage(logoDark);
-    preloadImage(logoLight);
+    preloadImage(logo);
   }, []);
 
   return (
-    <div className="fixed left-0 top-0 z-50 w-full bg-primary-light dark:bg-primary-dark">
-      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-xl text-secondary-light dark:text-secondary-dark">
+    <div className="fixed left-0 top-0 z-50 w-full bg-primary">
+      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-xl text-secondary">
         <Link to="home" smooth={true} duration={500}>
           <motion.img
-            src={darkMode ? logoDark : logoLight}
+            src={logo}
             alt="logo"
             className="h-14"
             whileHover={{
@@ -73,17 +68,17 @@ const Navbar = () => {
 
         <div className="flex flex-row-reverse items-center gap-3 sm:flex-row sm:gap-8">
           <ul className="hidden gap-10 sm:flex">
-            <li className="transition-colors hover:text-accent-light dark:hover:text-accent-dark">
+            <li className="transition-colors hover:text-accent">
               <Link to="home" {...linkProps}>
                 Home
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent-light dark:hover:text-accent-dark">
+            <li className="transition-colors hover:text-accent">
               <Link to="about" {...linkProps}>
                 About
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent-light dark:hover:text-accent-dark">
+            <li className="transition-colors hover:text-accent">
               <Link to="projects" {...linkProps}>
                 Projects
               </Link>
@@ -95,7 +90,7 @@ const Navbar = () => {
             onClick={toggleNav}
             className={`${
               isNavOpen ? "" : "sm:hidden"
-            } z-50 rounded-lg border border-tertiary-light border-opacity-20 p-2 text-primary-dark shadow-sm dark:border-tertiary-dark/30 dark:text-primary-light`}
+            } z-50 rounded-lg border border-tertiary/30 p-2 text-cream shadow-sm`}
             aria-label="Toggle Navigation"
           >
             {isNavOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
@@ -105,7 +100,7 @@ const Navbar = () => {
             initial={false}
             animate={isNavOpen ? "open" : "close"}
             variants={variants}
-            className="fixed left-0 top-0 z-40 flex min-h-screen w-full flex-col items-center justify-center bg-primary-light dark:bg-primary-dark"
+            className="fixed left-0 top-0 z-40 flex min-h-screen w-full flex-col items-center justify-center bg-primary"
           >
             <ul className="space-y-8 text-center text-4xl">
               <li>
@@ -125,11 +120,9 @@ const Navbar = () => {
               </li>
             </ul>
           </motion.div>
-
-          <ThemeToggle />
         </div>
       </div>
-      <div className="block border-b border-tertiary-light/30 opacity-25 shadow-sm dark:border-tertiary-dark/30"></div>
+      <div className="block border-b border-tertiary/30 opacity-25 shadow-sm"></div>
     </div>
   );
 };

@@ -4,22 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-light": "#f8fafc",
-        "primary-shade-light": "#f1f5f9",
-        "secondary-light": "#1e293b",
-        "tertiary-light": "#64748b",
-        "accent-light": "#ef4444",
-        "accent-shade-light": "#f87171",
-
-        "primary-dark": "#171717",
-        "primary-shade-dark": "#262626",
-        "secondary-dark": "#e5e5e5",
-        "tertiary-dark": "#a3a3a3",
-        "accent-dark": "#0ea5e9",
-        "accent-shade-dark": "#7dd3fc",
+        "primary": "#171717",
+        "primary-shade": "#262626",
+        "secondary": "#e5e5e5",
+        "tertiary": "#a3a3a3",
+        "accent": "#0ea5e9",
+        "accent-shade": "#7dd3fc",
+        "cream": "#f8fafc",
+        "navy": "#1e293b",
       },
     },
   },
   plugins: [],
-  darkMode: "class",
 };

@@ -9,7 +9,7 @@ const ProjectCard = (props) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.75, delay: 0.25 }}
-      className="flex flex-col rounded-lg border border-tertiary-light border-opacity-15 bg-gradient-to-b from-primary-light to-primary-shade-light p-5 text-secondary-light shadow-sm dark:border-tertiary-dark/5 dark:bg-gradient-to-b dark:from-primary-shade-dark/15 dark:to-primary-shade-dark/15 dark:text-secondary-dark dark:opacity-80 sm:flex-row"
+      className="flex flex-col rounded-lg border border-tertiary/5 bg-gradient-to-b from-primary-shade/15 to-primary-shade/15 p-5 text-secondary opacity-80 shadow-sm sm:flex-row"
     >
       <div className="mb-4 flex-shrink-0 sm:mb-0 sm:w-1/3">
         <img src={projectData.image} alt={projectData.title} className="aspect-[5/3] w-full rounded-md object-cover" />
@@ -17,13 +17,13 @@ const ProjectCard = (props) => {
 
       <div className="sm:w-2/3 sm:pl-6">
         <h3 className="text-xl font-medium">{projectData.title}</h3>
-        <p className="mb-2 text-base text-tertiary-light dark:text-tertiary-dark">{projectData.description}</p>
+        <p className="mb-2 text-base text-tertiary">{projectData.description}</p>
 
         <div className="mb-2 flex flex-row flex-wrap gap-3">
           {projectData.technologies.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border bg-tertiary-light/5 px-2 py-0.5 text-sm text-tertiary-light dark:border-tertiary-dark/5 dark:bg-tertiary-dark/10 dark:text-tertiary-dark"
+              className="rounded-full border border-tertiary/5 bg-tertiary/10 px-2 py-0.5 text-sm text-tertiary"
             >
               {tech}
             </span>
@@ -36,7 +36,7 @@ const ProjectCard = (props) => {
               href={projectData.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-2 text-tertiary-light hover:text-secondary-light dark:text-tertiary-dark dark:hover:text-secondary-dark"
+              className="flex gap-2 text-tertiary hover:text-secondary"
             >
               <FaGithubSquare className="text-xl" />
               <span>Code</span>
@@ -48,7 +48,7 @@ const ProjectCard = (props) => {
               href={projectData.liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-2 text-tertiary-light hover:text-secondary-light dark:text-tertiary-dark dark:hover:text-secondary-dark"
+              className="flex gap-2 text-tertiary hover:text-secondary"
             >
               <FaExternalLinkSquareAlt className="text-xl" />
               <span>Live</span>

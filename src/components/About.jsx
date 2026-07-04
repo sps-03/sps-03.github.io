@@ -5,14 +5,14 @@ import WorkExperienceCard from "./WorkExperienceCard";
 
 const About = () => {
   return (
-    <div className="bg-primary-light dark:bg-primary-dark">
+    <div className="bg-primary">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-16" id="about">
         <motion.h2
           initial={{ opacity: 0, y: 75 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.75, delay: 0.25 }}
-          className="py-8 text-center text-4xl font-semibold text-tertiary-light dark:text-tertiary-dark"
+          className="py-8 text-center text-4xl font-semibold text-tertiary"
         >
           About Me
         </motion.h2>
@@ -23,7 +23,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, delay: 0.25 }}
-            className="mb-3 text-2xl font-semibold text-tertiary-light dark:text-tertiary-dark"
+            className="mb-3 text-2xl font-semibold text-tertiary"
           >
             Education
           </motion.h3>
@@ -40,7 +40,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, delay: 0.25 }}
-            className="mb-3 text-2xl font-semibold text-tertiary-light dark:text-tertiary-dark"
+            className="mb-3 text-2xl font-semibold text-tertiary"
           >
             Work Experience
           </motion.h3>

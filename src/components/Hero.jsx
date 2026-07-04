@@ -2,27 +2,22 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
-import profilePicDark from "../assets/profile-pic-dark.png";
-import profilePicLight from "../assets/profile-pic-light.png";
+import profilePic from "../assets/profile-pic.png";
 import resume from "../assets/resume.pdf";
-import useTheme from "../hooks/useTheme";
 import WaterDropGrid from "./WaterDropGrid";
 
 const Hero = () => {
-  const { darkMode } = useTheme();
-
   useEffect(() => {
     const preloadImage = (src) => {
       const img = new Image();
       img.src = src;
     };
 
-    preloadImage(profilePicDark);
-    preloadImage(profilePicLight);
+    preloadImage(profilePic);
   }, []);
 
   return (
-    <div className="min-h-dvh overflow-x-clip bg-primary-light dark:bg-primary-dark">
+    <div className="min-h-dvh overflow-x-clip bg-primary">
       <div
         className="mx-auto flex min-h-screen max-w-[1200px] flex-col-reverse items-center justify-evenly pt-24 sm:flex-row sm:justify-around"
         id="home"
@@ -38,10 +33,10 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="pt-6 text-center text-3xl tracking-tight text-tertiary-light dark:text-tertiary-dark sm:pt-0 sm:text-left sm:text-4xl md:text-5xl"
+              className="pt-6 text-center text-3xl tracking-tight text-tertiary sm:pt-0 sm:text-left sm:text-4xl md:text-5xl"
             >
               HEY, I AM <br />
-              <span className="text-7xl font-medium text-secondary-light dark:text-secondary-dark sm:pl-6 sm:text-8xl md:text-9xl lg:pl-10">
+              <span className="text-7xl font-medium text-secondary sm:pl-6 sm:text-8xl md:text-9xl lg:pl-10">
                 SHAN
               </span>
             </motion.p>
@@ -50,7 +45,7 @@ const Hero = () => {
               sequence={["Developer", 1000, "Creator", 1000, "Problem-Solver", 1000]}
               speed={50}
               repeat={Infinity}
-              className="bg-gradient-to-b from-accent-light to-accent-shade-light bg-clip-text text-2xl font-semibold text-transparent dark:bg-gradient-to-b dark:from-accent-dark dark:to-accent-shade-dark  sm:text-4xl"
+              className="bg-gradient-to-b from-accent to-accent-shade bg-clip-text text-2xl font-semibold text-transparent sm:text-4xl"
             />
 
             <motion.div
@@ -67,12 +62,12 @@ const Hero = () => {
                 whileHover={{
                   scale: 1.15,
                 }}
-                className="rounded-md bg-secondary-light px-3 py-1 font-medium text-primary-light dark:bg-secondary-dark dark:text-primary-dark"
+                className="rounded-md bg-secondary px-3 py-1 font-medium text-primary"
               >
                 Resume
               </motion.a>
 
-              <div className="flex flex-row gap-2 text-4xl text-secondary-light dark:text-secondary-dark sm:gap-4">
+              <div className="flex flex-row gap-2 text-4xl text-secondary sm:gap-4">
                 <motion.a
                   whileHover={{ scale: 1.15 }}
                   href="https://www.linkedin.com/in/mohammed-shan"
@@ -105,7 +100,7 @@ const Hero = () => {
             <WaterDropGrid />
           </motion.div>
           <motion.img
-            src={darkMode ? profilePicDark : profilePicLight}
+            src={profilePic}
             className="pointer-events-none relative z-10 w-10/12 sm:w-full"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}

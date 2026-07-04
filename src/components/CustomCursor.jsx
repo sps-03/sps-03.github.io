@@ -56,7 +56,7 @@ const CustomCursor = () => {
         }}
       >
         <div
-          className="border-2 border-secondary-light dark:border-secondary-dark"
+          className="border-2 border-secondary"
           style={{
             width: "15px",
             height: "15px",
@@ -78,7 +78,7 @@ const CustomCursor = () => {
         }}
       >
         <div
-          className="bg-accent-light dark:bg-accent-dark"
+          className="bg-accent"
           style={{
             width: "9px",
             height: "9px",
