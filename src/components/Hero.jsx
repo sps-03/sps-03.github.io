@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
+import { FaFileLines, FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
 import profilePic from "../assets/profile-pic.png";
 import resume from "../assets/resume.pdf";
@@ -56,35 +56,33 @@ const Hero = () => {
               className="my-4 flex flex-row items-center gap-2 sm:gap-4"
             >
               <motion.a
+                whileHover={{ scale: 1.15 }}
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{
-                  scale: 1.15,
-                }}
-                className="rounded-md bg-secondary px-3 py-1 font-medium text-primary"
+                aria-label="Resume"
+                className="rounded-md bg-secondary p-2 text-xl text-primary"
               >
-                Resume
+                <FaFileLines />
               </motion.a>
-
-              <div className="flex flex-row gap-2 text-4xl text-secondary sm:gap-4">
-                <motion.a
-                  whileHover={{ scale: 1.15 }}
-                  href="https://www.linkedin.com/in/mohammed-shan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.15 }}
-                  href="https://github.com/sps-03"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaSquareGithub />
-                </motion.a>
-              </div>
+              <motion.a
+                whileHover={{ scale: 1.15 }}
+                href="https://www.linkedin.com/in/mohammed-shan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-secondary p-2 text-xl text-primary"
+              >
+                <FaLinkedinIn />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.15 }}
+                href="https://github.com/sps-03"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-secondary p-2 text-xl text-primary"
+              >
+                <FaGithub />
+              </motion.a>
             </motion.div>
           </motion.div>
         </div>
