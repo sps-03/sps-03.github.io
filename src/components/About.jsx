@@ -27,7 +27,11 @@ const About = () => {
           >
             Education
           </motion.h3>
-          <div className="flex flex-col gap-4">{education.map((educationData) => EducationCard(educationData))}</div>
+          <div className="flex flex-col gap-4">
+            {education.map((educationData) => (
+              <EducationCard key={educationData.id} {...educationData}/>
+            ))}
+          </div>
         </div>
 
         <div>
@@ -41,7 +45,9 @@ const About = () => {
             Work Experience
           </motion.h3>
           <div className="flex flex-col gap-4">
-            {workExperience.map((workExperienceData) => WorkExperienceCard(workExperienceData))}
+            {workExperience.map((workExperienceData) => (
+              <WorkExperienceCard key={workExperienceData.id} {...workExperienceData} />
+            ))}
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@ Welcome to my personal portfolio website, where I showcase my projects, skills, 
 3. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Customization

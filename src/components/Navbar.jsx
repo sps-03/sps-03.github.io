@@ -4,7 +4,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-scroll";
 import logoDark from "../assets/logo-dark.png";
 import logoLight from "../assets/logo-light.png";
-import { useTheme } from "../context/ThemeContext";
+import useTheme from "../hooks/useTheme";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -23,15 +23,17 @@ const Navbar = () => {
     open: {
       x: 0,
       transition: {
-        stiffness: 25,
-        damping: 25,
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
       },
     },
     close: {
       x: "-100%",
       transition: {
-        stiffness: 25,
-        damping: 25,
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
       },
     },
   };
@@ -88,7 +90,8 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div
+          <button
+            type="button"
             onClick={toggleNav}
             className={`${
               isNavOpen ? "" : "sm:hidden"
@@ -96,7 +99,7 @@ const Navbar = () => {
             aria-label="Toggle Navigation"
           >
             {isNavOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-          </div>
+          </button>
 
           <motion.div
             initial={false}

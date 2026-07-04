@@ -17,10 +17,11 @@ const Footer = () => {
         </h3>
         <div className="flex flex-row gap-3 text-3xl text-tertiary-light dark:text-tertiary-dark sm:gap-4">
           <motion.a
-            className="hover:text-secondary-light dark:hover:hover:text-secondary-dark"
+            className="hover:text-secondary-light dark:hover:text-secondary-dark"
             whileHover={{ scale: 1.15 }}
             href="https://www.linkedin.com/in/mohammed-shan"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin />
           </motion.a>
@@ -29,6 +30,7 @@ const Footer = () => {
             whileHover={{ scale: 1.15 }}
             href="https://github.com/sps-03"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaSquareGithub />
           </motion.a>

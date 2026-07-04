@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 const CustomCursor = () => {
-  const [innerPosition, setinnerPosition] = useState({ x: -20, y: -20 });
+  const [innerPosition, setInnerPosition] = useState({ x: -20, y: -20 });
   const [outerPosition, setOuterPosition] = useState({ x: -20, y: -20 });
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const moveCursor = (e) => {
-      setinnerPosition({ x: e.clientX, y: e.clientY });
+      setInnerPosition({ x: e.clientX, y: e.clientY });
     };
 
     const handleMouseEnter = () => setIsVisible(true);
@@ -28,6 +28,8 @@ const CustomCursor = () => {
     const followOuterCursor = () => {
       const xDiff = innerPosition.x - outerPosition.x;
       const yDiff = innerPosition.y - outerPosition.y;
+
+      if (Math.abs(xDiff) < 0.5 && Math.abs(yDiff) < 0.5) return;
 
       setOuterPosition((prev) => ({
         x: prev.x + xDiff * 0.1,

@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import profilePicDark from "../assets/profile-pic-dark.png";
 import profilePicLight from "../assets/profile-pic-light.png";
 import resume from "../assets/resume.pdf";
-import { useTheme } from "../context/ThemeContext";
+import useTheme from "../hooks/useTheme";
 import WaterDropGrid from "./WaterDropGrid";
 
 const Hero = () => {
@@ -63,19 +63,30 @@ const Hero = () => {
               <motion.a
                 href={resume}
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{
                   scale: 1.15,
                 }}
-                className="cursor-none rounded-md bg-secondary-light px-3 py-1 font-medium text-primary-light dark:bg-secondary-dark dark:text-primary-dark"
+                className="rounded-md bg-secondary-light px-3 py-1 font-medium text-primary-light dark:bg-secondary-dark dark:text-primary-dark"
               >
                 Resume
               </motion.a>
 
               <div className="flex flex-row gap-2 text-4xl text-secondary-light dark:text-secondary-dark sm:gap-4">
-                <motion.a whileHover={{ scale: 1.15 }} href="https://www.linkedin.com/in/mohammed-shan" target="_blank">
+                <motion.a
+                  whileHover={{ scale: 1.15 }}
+                  href="https://www.linkedin.com/in/mohammed-shan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaLinkedin />
                 </motion.a>
-                <motion.a whileHover={{ scale: 1.15 }} href="https://github.com/sps-03" target="_blank">
+                <motion.a
+                  whileHover={{ scale: 1.15 }}
+                  href="https://github.com/sps-03"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaSquareGithub />
                 </motion.a>
               </div>
