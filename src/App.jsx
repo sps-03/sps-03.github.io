@@ -1,9 +1,10 @@
-import About from "./components/About";
 import CustomCursor from "./components/CustomCursor";
+import Education from "./components/Education";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
+import WorkExperience from "./components/WorkExperience";
 import useTouchScreen from "./hooks/useTouchScreen";
 
 export default function App() {
@@ -12,7 +13,8 @@ export default function App() {
       {!useTouchScreen() ? <CustomCursor /> : null}
       <Navbar />
       <Hero />
-      <About />
+      <WorkExperience />
+      <Education />
       <Projects />
       <Footer />
     </>

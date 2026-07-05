@@ -52,8 +52,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed left-0 top-0 z-50 w-full bg-primary">
-      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-xl text-secondary">
+    <div className="bg-primary fixed left-0 top-0 z-50 w-full">
+      <div className="text-secondary mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-xl">
         <Link to="home" smooth={true} duration={500}>
           <motion.img
             src={logo}
@@ -68,17 +68,22 @@ const Navbar = () => {
 
         <div className="flex flex-row-reverse items-center gap-3 sm:flex-row sm:gap-8">
           <ul className="hidden gap-10 sm:flex">
-            <li className="transition-colors hover:text-accent">
+            <li className="hover:text-accent transition-colors">
               <Link to="home" {...linkProps}>
                 Home
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent">
-              <Link to="about" {...linkProps}>
-                About
+            <li className="hover:text-accent transition-colors">
+              <Link to="work-experience" {...linkProps}>
+                Experience
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent">
+            <li className="hover:text-accent transition-colors">
+              <Link to="education" {...linkProps}>
+                Education
+              </Link>
+            </li>
+            <li className="hover:text-accent transition-colors">
               <Link to="projects" {...linkProps}>
                 Projects
               </Link>
@@ -90,7 +95,7 @@ const Navbar = () => {
             onClick={toggleNav}
             className={`${
               isNavOpen ? "" : "sm:hidden"
-            } z-50 rounded-lg border border-tertiary/30 p-2 text-cream shadow-sm`}
+            } border-tertiary/30 text-cream z-50 rounded-lg border p-2 shadow-sm`}
             aria-label="Toggle Navigation"
           >
             {isNavOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
@@ -100,7 +105,7 @@ const Navbar = () => {
             initial={false}
             animate={isNavOpen ? "open" : "close"}
             variants={variants}
-            className="fixed left-0 top-0 z-40 flex min-h-screen w-full flex-col items-center justify-center bg-primary"
+            className="bg-primary fixed left-0 top-0 z-40 flex min-h-screen w-full flex-col items-center justify-center"
           >
             <ul className="space-y-8 text-center text-4xl">
               <li>
@@ -109,8 +114,13 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="about" onClick={closeNav} {...linkProps}>
-                  About
+                <Link to="work-experience" onClick={closeNav} {...linkProps}>
+                  Experience
+                </Link>
+              </li>
+              <li>
+                <Link to="education" onClick={closeNav} {...linkProps}>
+                  Education
                 </Link>
               </li>
               <li>
@@ -122,7 +132,7 @@ const Navbar = () => {
           </motion.div>
         </div>
       </div>
-      <div className="block border-b border-tertiary/30 opacity-25 shadow-sm"></div>
+      <div className="border-tertiary/30 block border-b opacity-25 shadow-sm"></div>
     </div>
   );
 };

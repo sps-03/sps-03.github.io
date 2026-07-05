@@ -7,19 +7,73 @@ import portfolioImage from "../assets/project-portfolio.jpg";
 import sentenceSimilarityImage from "../assets/project-sentence-similarity.jpg";
 import swiftTyperImage from "../assets/project-swift-typer.jpg";
 import broadcomImage from "../assets/work-broadcom.jpg";
+import freelanceImage from "../assets/work-freelance.jpg";
 import visaImage from "../assets/work-visa.jpg";
+
+export const workExperience = [
+  {
+    id: 1,
+    title: "Software Engineer",
+    company: "Freelance",
+    startDate: "Sep, 2023",
+    endDate: "Nov, 2024",
+    description: [
+      "Built and enhanced an admin dashboard and core platform features for a sports coaching marketplace connecting athletes with coaches, using React, Node.js, and MongoDB",
+      "Developed a FastAPI and React-based ERP system for an aviation parts vendor and inventory management platform, handling vendor data and workflow tracking",
+      "Built a MERN-based student record management system for a school client",
+    ],
+    image: freelanceImage,
+  },
+  {
+    id: 2,
+    title: "Software Engineer",
+    company: "Visa",
+    startDate: "Jun, 2022",
+    endDate: "Aug, 2023",
+    description: [
+      "Rolled out service and configuration changes across production systems during a large-scale data centre migration, coordinating with cross-functional teams to ensure reliable deployments",
+      "Identified and remediated security vulnerabilities using Black Duck, Checkmarx, and SonarQube, applying secure coding practices with the security engineering team",
+      "Built an internal dashboard to track and visualise vulnerabilities across scanning tools, improving visibility and reducing remediation turnaround time",
+    ],
+    image: visaImage,
+  },
+  {
+    id: 3,
+    title: "Software Engineer Intern",
+    company: "Visa",
+    startDate: "May, 2021",
+    endDate: "Jul, 2021",
+    description: [
+      "Set up integration testing using TestContainers, improving the reliability and consistency of test environments",
+      "Migrated the testing setup from an in-memory H2 database to containerised MySQL, aligning test environments more closely with production",
+    ],
+    image: visaImage,
+  },
+  {
+    id: 4,
+    title: "Software Validation Engineer",
+    company: "Broadcom",
+    startDate: "Jun, 2018",
+    endDate: "Nov, 2018",
+    description: [
+      "Automated WLAN test cases using Python within an internal test automation framework",
+      "Reduced manual testing effort and improved test execution efficiency",
+    ],
+    image: broadcomImage,
+  },
+];
 
 export const education = [
   {
     id: 1,
     degree: "M.Sc in Cyber Security",
     university: "University of Chester",
-    startDate: "2025",
-    endDate: "2026",
+    startDate: "Jan, 2025",
+    endDate: "Feb, 2026",
     description: [
-      "Focused on advanced topics such as penetration testing, web systems, and software exploitation",
-      "Developing expertise in identifying, analyzing, and mitigating cybersecurity threats",
-      "Pursuing research on secure system design and emerging technologies in cybersecurity",
+      "Graduated with Distinction, focusing on penetration testing, web systems, and software exploitation",
+      "Built practical expertise in identifying, analysing, and mitigating cybersecurity threats and secure system design",
+      "Served as Student Voice Representative, presenting student feedback to faculty for academic and welfare improvements",
     ],
     image: chesterImage,
   },
@@ -27,12 +81,13 @@ export const education = [
     id: 2,
     degree: "M.Tech in Computer Science",
     university: "IIT Madras",
-    startDate: "2020",
-    endDate: "2022",
+    startDate: "Aug, 2020",
+    endDate: "Jun, 2022",
     description: [
-      "Specialized in dynamic graph algorithms & CUDA programming",
+      "Graduated with a CGPA of 9.44, specialising in dynamic graph algorithms and CUDA programming",
+      "Contributed to a patented Domain-Specific Language for graph processing",
       "Awarded the Prakash Arora Prize for highest CGPA in first year",
-      "Recognized with the Star Teaching Assistant Award for outstanding contributions",
+      "Recognised with the Star Teaching Assistant Award for outstanding contributions",
     ],
     image: iitmImage,
   },
@@ -40,50 +95,10 @@ export const education = [
     id: 3,
     degree: "B.Tech in Computer Science",
     university: "School of Engineering, CUSAT",
-    startDate: "2014",
-    endDate: "2018",
-    description: ["Graduated with first class, focusing on data structures, algorithms, and web development"],
+    startDate: "Aug, 2014",
+    endDate: "Jun, 2018",
+    description: ["Graduated with a CGPA of 7.47, focusing on data structures, algorithms, and web development"],
     image: cusatImage,
-  },
-];
-
-export const workExperience = [
-  {
-    id: 1,
-    title: "Software Engineer",
-    company: "Visa",
-    startDate: "June, 2022",
-    endDate: "August, 2023",
-    description: [
-      "Played a pivotal role in the DCM backend team, focusing on addressing security findings",
-      "Collaborated closely with security engineers to detect, analyze, and rectify vulnerabilities in the application",
-      "Employed SAST and DAST tools for comprehensive security assessments",
-    ],
-    image: visaImage,
-  },
-  {
-    id: 2,
-    title: "Software Engineer Intern",
-    company: "Visa",
-    startDate: "May, 2021",
-    endDate: "July, 2021",
-    description: [
-      "Implemented robust integration testing utilizing TestContainers",
-      "Successfully replaced the H2 database with a MySQL container, enhancing the developer experience",
-    ],
-    image: visaImage,
-  },
-  {
-    id: 3,
-    title: "Automation Engineer",
-    company: "Broadcom",
-    startDate: "June, 2018",
-    endDate: "November, 2018",
-    description: [
-      "Contributed to the WLAN Automation Team, actively involved in developing and automating test cases",
-      "Leveraged Python for automation, ensuring the efficiency and accuracy of test case execution",
-    ],
-    image: broadcomImage,
   },
 ];
 
@@ -92,7 +107,7 @@ export const projects = [
     id: 1,
     title: "Dynamic Graph Algorithms for GPU",
     description:
-      "Developed a CUDA-based solution for efficient processing of dynamic graphs, later integrating it into the Starplat DSL.",
+      "Engineered GPU-accelerated CUDA algorithms for dynamic graph processing as part of the Starplat DSL research project, enhancing computational efficiency for large-scale graph operations.",
     image: graphImage,
     technologies: ["C++", "CUDA", "Graph Algorithms"],
     githubLink: "https://github.com/sps-03/MTP",
@@ -101,7 +116,7 @@ export const projects = [
     id: 2,
     title: "Swift Typer App",
     description:
-      "Developed a sleek and interactive typing app using React, TypeScript, Tailwind CSS, and Framer Motion for a responsive and animated user experience, focusing on enhancing typing speed and accuracy.",
+      "Built an interactive typing speed app with real-time performance tracking and theme-switching, featuring a responsive, component-based UI with smooth Framer Motion animations for an engaging user experience.",
     image: swiftTyperImage,
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/sps-03/swift-typer",
@@ -111,7 +126,7 @@ export const projects = [
     id: 3,
     title: "Chat App with MERN Stack",
     description:
-      "Developed a real-time chat application using Node.js, React, Express.js, MongoDB, and Socket.IO, with design implemented through Tailwind CSS. The app supports instant messaging and dynamic updates across users.",
+      "Architected a real-time messaging platform using Node.js, React, Express.js, MongoDB, and Socket.IO, combining WebSockets and REST APIs in an event-driven architecture with a responsive UI for low-latency communication between concurrent users.",
     image: chatAppImage,
     technologies: ["Node.js", "React", "Express.js", "MongoDB", "Socket.IO", "Tailwind CSS"],
     githubLink: "https://github.com/sps-03/connectify",
