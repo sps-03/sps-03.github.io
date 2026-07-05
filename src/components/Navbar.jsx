@@ -74,6 +74,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="transition-colors hover:text-accent">
+              <Link to="skills" {...linkProps}>
+                Skills
+              </Link>
+            </li>
+            <li className="transition-colors hover:text-accent">
               <Link to="work-experience" {...linkProps}>
                 Experience
               </Link>
@@ -111,6 +116,11 @@ const Navbar = () => {
               <li>
                 <Link to="home" onClick={closeNav} {...linkProps}>
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link to="skills" onClick={closeNav} {...linkProps}>
+                  Skills
                 </Link>
               </li>
               <li>

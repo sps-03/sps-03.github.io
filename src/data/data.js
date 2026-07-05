@@ -1,3 +1,27 @@
+import { FaAws } from "react-icons/fa6";
+import {
+  SiCplusplus,
+  SiCss3,
+  SiDocker,
+  SiExpress,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiJest,
+  SiLinux,
+  SiMongodb,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPostman,
+  SiPrisma,
+  SiPython,
+  SiReact,
+  SiRedis,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 import chesterImage from "../assets/education-chester.jpg";
 import cusatImage from "../assets/education-cusat.jpg";
 import iitmImage from "../assets/education-iitm.jpg";
@@ -9,6 +33,31 @@ import swiftTyperImage from "../assets/project-swift-typer.jpg";
 import broadcomImage from "../assets/work-broadcom.jpg";
 import freelanceImage from "../assets/work-freelance.jpg";
 import visaImage from "../assets/work-visa.jpg";
+
+export const skills = [
+  { id: 1, name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { id: 2, name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { id: 3, name: "Python", icon: SiPython, color: "#3776AB" },
+  { id: 4, name: "C++", icon: SiCplusplus, color: "#00599C" },
+  { id: 5, name: "React", icon: SiReact, color: "#61DAFB" },
+  { id: 6, name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+  { id: 7, name: "CSS3", icon: SiCss3, color: "#1572B6" },
+  { id: 8, name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { id: 9, name: "Vite", icon: SiVite, color: "#646CFF" },
+  { id: 10, name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+  { id: 11, name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
+  { id: 12, name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { id: 13, name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+  { id: 14, name: "Redis", icon: SiRedis, color: "#DC382D" },
+  { id: 15, name: "Prisma", icon: SiPrisma, color: "#FFFFFF" },
+  { id: 16, name: "AWS", icon: FaAws, color: "#FF9900" },
+  { id: 17, name: "Docker", icon: SiDocker, color: "#2496ED" },
+  { id: 18, name: "Git", icon: SiGit, color: "#F05032" },
+  { id: 19, name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+  { id: 20, name: "Linux", icon: SiLinux, color: "#FCC624" },
+  { id: 21, name: "Postman", icon: SiPostman, color: "#FF6C37" },
+  { id: 22, name: "Jest", icon: SiJest, color: "#C21325" },
+];
 
 export const workExperience = [
   {
