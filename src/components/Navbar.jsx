@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-scroll";
@@ -51,9 +51,13 @@ const Navbar = () => {
     preloadImage(logo);
   }, []);
 
+  const { scrollY } = useScroll();
+  const backgroundColor = useTransform(scrollY, [0, 150], ["rgba(23, 23, 23, 0)", "rgba(23, 23, 23, 1)"]);
+  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.25]);
+
   return (
-    <div className="fixed left-0 top-0 z-50 w-full bg-primary">
-      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-lg text-secondary">
+    <motion.div style={{ backgroundColor }} className="fixed left-0 top-0 z-50 w-full">
+      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-secondary md:text-lg">
         <Link to="home" smooth={true} duration={500}>
           <motion.img
             src={logo}
@@ -66,8 +70,8 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="flex flex-row-reverse items-center gap-3 sm:flex-row sm:gap-8">
-          <ul className="hidden gap-10 sm:flex">
+        <div className="flex items-center gap-3 sm:gap-8">
+          <ul className="hidden gap-6 sm:flex">
             <li className="transition-colors hover:text-accent">
               <Link to="home" {...linkProps}>
                 Home
@@ -117,7 +121,7 @@ const Navbar = () => {
             variants={variants}
             className="fixed left-0 top-0 z-40 flex min-h-screen w-full flex-col items-center justify-center bg-primary"
           >
-            <ul className="space-y-8 text-center text-4xl">
+            <ul className="space-y-8 text-center text-2xl">
               <li>
                 <Link to="home" onClick={closeNav} {...linkProps}>
                   Home
@@ -152,8 +156,8 @@ const Navbar = () => {
           </motion.div>
         </div>
       </div>
-      <div className="block border-b border-tertiary/30 opacity-25 shadow-sm"></div>
-    </div>
+      <motion.div style={{ opacity: borderOpacity }} className="block border-b border-tertiary/30 shadow-sm"></motion.div>
+    </motion.div>
   );
 };
 
