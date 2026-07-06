@@ -8,33 +8,40 @@ import { useGLTF } from "@react-three/drei";
 
 const MODEL_PATH = "/models/computer-desk.glb";
 
+// Recenters the model's bounding-box center to the world origin. The model's native (Sketchfab)
+// coordinates sit far from the origin, which caused shadow/precision issues previously.
+const RECENTER = [0, -58.229725, -77.77367];
+
 const DeveloperDeskScene = (props) => {
   const { nodes, materials } = useGLTF(MODEL_PATH);
+  const shadowProps = { castShadow: true, receiveShadow: true };
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.KeyboardCable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[34.329, 76.164, 56.062]} />
-      <mesh geometry={nodes.Paper2_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[76.15, 75.001, 39.723]} rotation={[0, 0.031, 0]} scale={0.1} />
-      <mesh geometry={nodes.Monitor_cable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-3.9, 74.815, 28.04]} />
-      <mesh geometry={nodes.Speakers_cable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[27.417, 74.815, 27.427]} />
-      <mesh geometry={nodes.Mouse_cord_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[34.329, 76.164, 56.062]} />
-      <mesh geometry={nodes.CD_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-76.997, 75.076, 57.333]} rotation={[-Math.PI, 1.261, -Math.PI]} scale={0.1} />
-      <mesh geometry={nodes.Drawers_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[65.098, 0, 55.308]} />
-      <mesh geometry={nodes.Phone_stand_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[50.705, 74.815, 18.869]} rotation={[0, -0.193, 0]} />
-      <mesh geometry={nodes.Phonehandle_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[46.949, 79.24, 18.508]} rotation={[0.167, -0.19, 0.032]} scale={0.263} />
-      <mesh geometry={nodes.CD_case_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-76.997, 75.356, 57.333]} rotation={[-Math.PI, 1.261, -Math.PI]} scale={0.064} />
-      <mesh geometry={nodes.Pen_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[76.512, 76.014, 45.557]} rotation={[0, 0.244, 0]} scale={0.005} />
-      <mesh geometry={nodes.Paper_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[74.855, 74.63, 39.723]} rotation={[0, 0.12, 0]} scale={0.1} />
-      <mesh geometry={nodes.Floppy_disk_FloppyDisk_0.geometry} material={materials.FloppyDisk} position={[-41.906, 74.815, 65.87]} rotation={[Math.PI / 2, 0, 0.247]} />
-      <mesh geometry={nodes.Keyboard_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-3.76, 74.815, 55.898]} scale={0.305} />
-      <mesh geometry={nodes.SpeakerR_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-33.15, 74.815, 31.868]} rotation={[0, 0.446, 0]} scale={0.18} />
-      <mesh geometry={nodes.SpeakerL_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[27.417, 74.815, 27.427]} rotation={[0, -0.102, 0]} scale={0.18} />
-      <mesh geometry={nodes.Mousepad_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[42.964, 74.815, 54.261]} rotation={[0, -0.115, 0]} scale={0.149} />
-      <mesh geometry={nodes.Mouse_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[34.329, 76.164, 56.062]} scale={0.271} />
-      <mesh geometry={nodes.Computer_case_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-55.078, 74.815, 31.19]} rotation={[0, 0.036, 0]} scale={0.229} />
-      <mesh geometry={nodes.Office_desk_ComputerDesk_0.geometry} material={materials.ComputerDesk} scale={0.271} />
-      <mesh geometry={nodes.Cube000_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[10.874, 0, 115.729]} rotation={[0, 0.58, 0]} scale={0.394} />
-      <mesh geometry={nodes.Computer_monitor001_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-3.9, 74.815, 28.04]} scale={[0.192, 0.144, 0.096]} />
+      <group position={RECENTER}>
+        <mesh {...shadowProps} geometry={nodes.KeyboardCable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[34.329, 76.164, 56.062]} />
+        <mesh {...shadowProps} geometry={nodes.Paper2_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[76.15, 75.001, 39.723]} rotation={[0, 0.031, 0]} scale={0.1} />
+        <mesh {...shadowProps} geometry={nodes.Monitor_cable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-3.9, 74.815, 28.04]} />
+        <mesh {...shadowProps} geometry={nodes.Speakers_cable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[27.417, 74.815, 27.427]} />
+        <mesh {...shadowProps} geometry={nodes.Mouse_cord_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[34.329, 76.164, 56.062]} />
+        <mesh {...shadowProps} geometry={nodes.CD_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-76.997, 75.076, 57.333]} rotation={[-Math.PI, 1.261, -Math.PI]} scale={0.1} />
+        <mesh {...shadowProps} geometry={nodes.Drawers_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[65.098, 0, 55.308]} />
+        <mesh {...shadowProps} geometry={nodes.Phone_stand_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[50.705, 74.815, 18.869]} rotation={[0, -0.193, 0]} />
+        <mesh {...shadowProps} geometry={nodes.Phonehandle_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[46.949, 79.24, 18.508]} rotation={[0.167, -0.19, 0.032]} scale={0.263} />
+        <mesh {...shadowProps} geometry={nodes.CD_case_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-76.997, 75.356, 57.333]} rotation={[-Math.PI, 1.261, -Math.PI]} scale={0.064} />
+        <mesh {...shadowProps} geometry={nodes.Pen_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[76.512, 76.014, 45.557]} rotation={[0, 0.244, 0]} scale={0.005} />
+        <mesh {...shadowProps} geometry={nodes.Paper_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[74.855, 74.63, 39.723]} rotation={[0, 0.12, 0]} scale={0.1} />
+        <mesh {...shadowProps} geometry={nodes.Floppy_disk_FloppyDisk_0.geometry} material={materials.FloppyDisk} position={[-41.906, 74.815, 65.87]} rotation={[Math.PI / 2, 0, 0.247]} />
+        <mesh {...shadowProps} geometry={nodes.Keyboard_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-3.76, 74.815, 55.898]} scale={0.305} />
+        <mesh {...shadowProps} geometry={nodes.SpeakerR_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-33.15, 74.815, 31.868]} rotation={[0, 0.446, 0]} scale={0.18} />
+        <mesh {...shadowProps} geometry={nodes.SpeakerL_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[27.417, 74.815, 27.427]} rotation={[0, -0.102, 0]} scale={0.18} />
+        <mesh {...shadowProps} geometry={nodes.Mousepad_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[42.964, 74.815, 54.261]} rotation={[0, -0.115, 0]} scale={0.149} />
+        <mesh {...shadowProps} geometry={nodes.Mouse_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[34.329, 76.164, 56.062]} scale={0.271} />
+        <mesh {...shadowProps} geometry={nodes.Computer_case_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-55.078, 74.815, 31.19]} rotation={[0, 0.036, 0]} scale={0.229} />
+        <mesh {...shadowProps} geometry={nodes.Office_desk_ComputerDesk_0.geometry} material={materials.ComputerDesk} scale={0.271} />
+        <mesh {...shadowProps} geometry={nodes.Cube000_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[10.874, 0, 115.729]} rotation={[0, 0.58, 0]} scale={0.394} />
+        <mesh {...shadowProps} geometry={nodes.Computer_monitor001_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-3.9, 74.815, 28.04]} scale={[0.192, 0.144, 0.096]} />
+      </group>
     </group>
   );
 };
