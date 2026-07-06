@@ -35,4 +35,10 @@ export default [
       "react/prop-types": "off",
     },
   },
+  {
+    files: ["**/DeveloperDesk.jsx", "**/DeveloperDeskScene.jsx"],
+    rules: {
+      "react/no-unknown-property": "off",
+    },
+  },
 ];

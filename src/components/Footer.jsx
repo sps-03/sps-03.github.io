@@ -3,7 +3,7 @@ import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-primary pt-16">
+    <div className="w-full bg-primary pt-8">
       <div className="border-t border-tertiary/30 opacity-25 shadow-sm"></div>
       <motion.div
         initial={{ opacity: 0 }}

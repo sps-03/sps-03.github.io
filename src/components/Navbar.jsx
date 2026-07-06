@@ -53,7 +53,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed left-0 top-0 z-50 w-full bg-primary">
-      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-xl text-secondary">
+      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 text-lg text-secondary">
         <Link to="home" smooth={true} duration={500}>
           <motion.img
             src={logo}
@@ -93,6 +93,11 @@ const Navbar = () => {
                 Projects
               </Link>
             </li>
+            <li className="transition-colors hover:text-accent">
+              <Link to="contact" {...linkProps}>
+                Contact
+              </Link>
+            </li>
           </ul>
 
           <button
@@ -100,7 +105,7 @@ const Navbar = () => {
             onClick={toggleNav}
             className={`${
               isNavOpen ? "" : "sm:hidden"
-            } z-50 rounded-lg border border-tertiary/30 p-2 text-cream shadow-sm`}
+            } z-50 cursor-none rounded-lg border border-tertiary/30 p-2 text-cream shadow-sm`}
             aria-label="Toggle Navigation"
           >
             {isNavOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
@@ -136,6 +141,11 @@ const Navbar = () => {
               <li>
                 <Link to="projects" onClick={closeNav} {...linkProps}>
                   Projects
+                </Link>
+              </li>
+              <li>
+                <Link to="contact" onClick={closeNav} {...linkProps}>
+                  Contact
                 </Link>
               </li>
             </ul>

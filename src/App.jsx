@@ -1,3 +1,4 @@
+import Contact from "./components/Contact";
 import CustomCursor from "./components/CustomCursor";
 import Education from "./components/Education";
 import Footer from "./components/Footer";
@@ -18,6 +19,7 @@ export default function App() {
       <WorkExperience />
       <Education />
       <Projects />
+      <Contact />
       <Footer />
     </>
   );
