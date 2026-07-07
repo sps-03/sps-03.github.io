@@ -9,7 +9,7 @@ const DeveloperDesk = () => {
   return (
     <div
       className="h-80 w-full overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]"
-      style={{ background: "radial-gradient(ellipse at center, #7dd3fc 25%, #0ea5e9 80%)" }}
+      style={{ background: "radial-gradient(ellipse at center, #1e293b 65%, #0f1115 120%)" }}
     >
       <Canvas shadows camera={{ position: [50, 150, 370], fov: 35 }}>
         <ambientLight intensity={0.7} />

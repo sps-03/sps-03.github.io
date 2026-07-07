@@ -78,7 +78,7 @@ const CustomCursor = () => {
         }}
       >
         <div
-          className="bg-accent"
+          className="bg-gradient-to-br from-accent to-accent-shade"
           style={{
             width: "9px",
             height: "9px",

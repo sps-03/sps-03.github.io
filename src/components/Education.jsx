@@ -1,24 +1,16 @@
-import { motion } from "framer-motion";
 import { education } from "../data/data";
 import EducationCard from "./EducationCard";
+import SectionHeading from "./SectionHeading";
 
 const Education = () => {
   return (
-    <div className="bg-primary">
+    <div className="bg-primary pb-16">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-16" id="education">
-        <motion.h2
-          initial={{ opacity: 0, y: 75 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.75, delay: 0.25 }}
-          className="py-8 text-center text-4xl font-semibold text-tertiary"
-        >
-          Education
-        </motion.h2>
+        <SectionHeading kicker="Background" title="Education" />
 
         <div className="flex flex-col gap-4">
-          {education.map((educationData) => (
-            <EducationCard key={educationData.id} {...educationData} />
+          {education.map((educationData, index) => (
+            <EducationCard key={educationData.id} index={index} {...educationData} />
           ))}
         </div>
       </div>

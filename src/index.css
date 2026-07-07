@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,11 +8,39 @@
   cursor: none;
 }
 
+html {
+  scrollbar-color: theme("colors.accent") theme("colors.primary");
+}
+
 body {
   @apply bg-primary;
-  font-family: "Roboto", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+::selection {
+  @apply bg-accent/30 text-secondary;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gradient-to-b from-accent to-accent-shade;
 }
 
 .hexagon {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.text-gradient {
+  @apply bg-gradient-to-b from-accent to-accent-shade bg-clip-text text-transparent;
+}
+
+.entry-card {
+  @apply flex flex-col overflow-hidden rounded-xl border border-white/5 bg-primary-shade/40 p-5 text-secondary shadow-lg backdrop-blur-sm transition-[border-color,box-shadow] duration-300 hover:border-accent/40 hover:shadow-[0_20px_60px_-15px_rgba(14,165,233,0.35)] sm:flex-row;
 }

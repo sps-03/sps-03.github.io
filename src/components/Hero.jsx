@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { FaFileLines, FaLinkedinIn, FaGithub } from "react-icons/fa6";
+import { FaFileLines, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
-import profilePic from "../assets/profile-pic.png";
+import profilePic from "../assets/profile-pic.jpg";
 import resume from "../assets/resume.pdf";
 import HeroBackground from "./HeroBackground";
 import ProfileHex from "./ProfileHex";
@@ -38,13 +38,13 @@ const Hero = () => {
               className="pt-6 text-center text-3xl tracking-tight text-tertiary sm:pt-0 sm:text-left sm:text-4xl md:text-5xl"
             >
               HEY, I AM <br />
-              <span className="text-7xl font-medium text-secondary sm:pl-6 sm:text-8xl md:text-9xl lg:pl-10">
+              <span className="text-gradient text-7xl font-bold sm:pl-6 sm:text-8xl md:text-9xl lg:pl-10">
                 SHAN
               </span>
             </motion.p>
 
             <TypeAnimation
-              sequence={["Developer", 1000, "Creator", 1000, "Problem-Solver", 1000]}
+              sequence={["Developer", 1000, "Problem-Solver", 1000, "Lifelong Learner", 1000]}
               speed={50}
               repeat={Infinity}
               className="bg-gradient-to-b from-accent to-accent-shade bg-clip-text text-2xl font-semibold text-transparent sm:text-4xl"
@@ -63,7 +63,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Resume"
-                className="rounded-md bg-secondary p-2 text-xl text-primary"
+                className="rounded-md bg-primary-shade p-2 text-xl text-sky-100 shadow-sm transition-colors duration-300 hover:bg-sky-500 hover:text-white hover:shadow-[0_8px_25px_-6px_rgba(14,165,233,0.6)]"
               >
                 <FaFileLines />
               </motion.a>
@@ -72,7 +72,8 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/mohammed-shan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-secondary p-2 text-xl text-primary"
+                aria-label="LinkedIn"
+                className="rounded-md bg-primary-shade p-2 text-xl text-[#0A66C2] shadow-sm transition-colors duration-300 hover:bg-[#0A66C2] hover:text-white hover:shadow-[0_8px_25px_-6px_rgba(10,102,194,0.6)]"
               >
                 <FaLinkedinIn />
               </motion.a>
@@ -81,7 +82,8 @@ const Hero = () => {
                 href="https://github.com/sps-03"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-secondary p-2 text-xl text-primary"
+                aria-label="GitHub"
+                className="rounded-md bg-primary-shade p-2 text-xl text-secondary shadow-sm transition-colors duration-300 hover:bg-white hover:text-black hover:shadow-[0_8px_25px_-6px_rgba(255,255,255,0.35)]"
               >
                 <FaGithub />
               </motion.a>

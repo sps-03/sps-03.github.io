@@ -167,7 +167,7 @@ export const projects = [
     description:
       "Built an interactive typing speed app with real-time performance tracking and theme-switching, featuring a responsive, component-based UI with smooth Framer Motion animations for an engaging user experience.",
     image: swiftTyperImage,
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/sps-03/swift-typer",
     liveLink: "https://sps-03.github.io/swift-typer/",
   },
@@ -195,7 +195,7 @@ export const projects = [
     description:
       "Developed a dynamic and responsive portfolio website using React, Tailwind CSS, and Framer Motion to showcase projects and skills with smooth animations and a modern design.",
     image: portfolioImage,
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Three.js", "Web3Forms"],
     githubLink: "https://github.com/sps-03/sps-03.github.io",
     liveLink: "https://sps-03.github.io/",
   },

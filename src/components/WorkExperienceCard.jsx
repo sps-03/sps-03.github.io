@@ -1,36 +1,37 @@
 import { motion } from "framer-motion";
 
-const WorkExperienceCard = (props) => {
-  const workExperienceData = props;
+const WorkExperienceCard = ({ index = 0, ...workExperienceData }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 75 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.75, delay: 0.25 }}
-      className="flex flex-col rounded-lg border border-tertiary/5 bg-gradient-to-b from-primary-shade/15 to-primary-shade/15 p-5 text-secondary opacity-80 shadow-sm sm:flex-row"
+      transition={{ duration: 0.75, delay: Math.min(index * 0.12, 0.6) }}
+      whileHover={{ x: -6, y: -6 }}
+      className="entry-card group"
     >
-      <div className="mb-4 flex-shrink-0 sm:mb-0 sm:w-1/3">
+      <div className="mb-4 flex-shrink-0 overflow-hidden rounded-lg sm:mb-0 sm:w-1/3">
         <img
           src={workExperienceData.image}
           alt={workExperienceData.company}
-          className="aspect-[5/3] w-full rounded-md object-cover"
+          className="aspect-[5/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
       </div>
 
       <div className="sm:w-2/3 sm:pl-6">
         <div className="flex flex-col">
-          <h3 className="text-xl font-medium">{workExperienceData.title}</h3>
+          <h3 className="text-xl font-semibold">{workExperienceData.title}</h3>
 
-          <p className="text-base">
-            {workExperienceData.company} ({workExperienceData.startDate} - {workExperienceData.endDate})
+          <p className="mt-1 flex flex-wrap items-center gap-x-2 text-sm">
+            <span className="font-medium text-accent-shade">{workExperienceData.company}</span>
+            <span className="text-tertiary">
+              {workExperienceData.startDate} - {workExperienceData.endDate}
+            </span>
           </p>
 
-          <ul className="list-disc pl-5 text-tertiary">
-            {workExperienceData.description.map((desc, index) => (
-              <li key={index} className="text-base">
-                {desc}
-              </li>
+          <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-tertiary marker:text-accent-shade">
+            {workExperienceData.description.map((desc, i) => (
+              <li key={i}>{desc}</li>
             ))}
           </ul>
         </div>

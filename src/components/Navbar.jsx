@@ -72,32 +72,32 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3 sm:gap-8">
           <ul className="hidden gap-6 sm:flex">
-            <li className="transition-colors hover:text-accent">
+            <li className="transition-all duration-200 hover:scale-110 hover:text-accent">
               <Link to="home" {...linkProps}>
                 Home
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent">
+            <li className="transition-all duration-200 hover:scale-110 hover:text-accent">
               <Link to="skills" {...linkProps}>
                 Skills
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent">
+            <li className="transition-all duration-200 hover:scale-110 hover:text-accent">
               <Link to="work-experience" {...linkProps}>
                 Experience
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent">
+            <li className="transition-all duration-200 hover:scale-110 hover:text-accent">
               <Link to="education" {...linkProps}>
                 Education
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent">
+            <li className="transition-all duration-200 hover:scale-110 hover:text-accent">
               <Link to="projects" {...linkProps}>
                 Projects
               </Link>
             </li>
-            <li className="transition-colors hover:text-accent">
+            <li className="transition-all duration-200 hover:scale-110 hover:text-accent">
               <Link to="contact" {...linkProps}>
                 Contact
               </Link>

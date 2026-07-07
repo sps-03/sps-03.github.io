@@ -64,8 +64,8 @@ const ContactForm = () => {
         aria-hidden="true"
       />
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="name" className="text-sm text-tertiary">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-tertiary">
           Name
         </label>
         <input
@@ -73,12 +73,12 @@ const ContactForm = () => {
           name="name"
           type="text"
           required
-          className="rounded-md border border-tertiary/20 bg-primary-shade px-4 py-2 text-secondary outline-none focus:border-accent"
+          className="rounded-md border border-tertiary/20 bg-primary-shade px-4 py-2 text-secondary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
         />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="email" className="text-sm text-tertiary">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-tertiary">
           Email
         </label>
         <input
@@ -86,12 +86,12 @@ const ContactForm = () => {
           name="email"
           type="email"
           required
-          className="rounded-md border border-tertiary/20 bg-primary-shade px-4 py-2 text-secondary outline-none focus:border-accent"
+          className="rounded-md border border-tertiary/20 bg-primary-shade px-4 py-2 text-secondary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
         />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="message" className="text-sm text-tertiary">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-tertiary">
           Message
         </label>
         <textarea
@@ -99,7 +99,7 @@ const ContactForm = () => {
           name="message"
           rows={6}
           required
-          className="resize-none rounded-md border border-tertiary/20 bg-primary-shade px-4 py-2 text-secondary outline-none focus:border-accent"
+          className="resize-none rounded-md border border-tertiary/20 bg-primary-shade px-4 py-2 text-secondary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
         />
       </div>
 
@@ -108,12 +108,12 @@ const ContactForm = () => {
         whileTap={{ scale: 0.98 }}
         type="submit"
         disabled={status === "sending"}
-        className="cursor-none rounded-md bg-accent px-4 py-2 font-medium text-primary disabled:opacity-60"
+        className="cursor-none rounded-md border border-accent/20 bg-gradient-to-b from-navy to-primary px-4 py-2.5 font-semibold text-secondary outline-none transition-[box-shadow,border-color] duration-300 hover:border-accent/40 hover:shadow-[0_8px_10px_-10px_rgba(14,165,233,0.65)] focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-60"
       >
         {status === "sending" ? "Sending..." : "Send Message"}
       </motion.button>
 
-      {status === "success" && <p className="text-sm text-accent">Thanks! Your message has been sent.</p>}
+      {status === "success" && <p className="text-sm text-accent-shade">Thanks! Your message has been sent.</p>}
       {status === "error" && (
         <p className="text-sm text-red-500">Something went wrong. Please try again in a moment.</p>
       )}
