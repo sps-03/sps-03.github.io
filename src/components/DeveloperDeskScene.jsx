@@ -8,9 +8,9 @@ import { useGLTF } from "@react-three/drei";
 
 const MODEL_PATH = "/models/computer-desk.glb";
 
-// Recenters the model's bounding-box center to the world origin. The model's native (Sketchfab)
+// Recentres the model's bounding-box centre to the world origin. The model's native (Sketchfab)
 // coordinates sit far from the origin, which caused shadow/precision issues previously.
-const RECENTER = [0, -58.229725, -77.77367];
+const RECENTRE = [0, -58.229725, -77.77367];
 
 const DeveloperDeskScene = (props) => {
   const { nodes, materials } = useGLTF(MODEL_PATH);
@@ -18,7 +18,7 @@ const DeveloperDeskScene = (props) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={RECENTER}>
+      <group position={RECENTRE}>
         <mesh {...shadowProps} geometry={nodes.KeyboardCable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[34.329, 76.164, 56.062]} />
         <mesh {...shadowProps} geometry={nodes.Paper2_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[76.15, 75.001, 39.723]} rotation={[0, 0.031, 0]} scale={0.1} />
         <mesh {...shadowProps} geometry={nodes.Monitor_cable_ComputerDesk_0.geometry} material={materials.ComputerDesk} position={[-3.9, 74.815, 28.04]} />
