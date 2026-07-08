@@ -3,7 +3,7 @@ import { useId, useState } from "react";
 
 const ProfileHex = ({ src }) => {
   return (
-    <div className="relative flex w-5/12 items-center justify-center sm:w-7/12">
+    <div className="relative flex w-7/12 items-center justify-center">
       <MiniHex
         wrapperClassName="absolute -left-3 -top-8 w-9 sm:-left-6 sm:-top-10 sm:w-11 md:w-14"
         floatDuration={5}
