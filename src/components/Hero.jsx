@@ -44,7 +44,7 @@ const Hero = () => {
             </motion.p>
 
             <TypeAnimation
-              sequence={["Developer", 1000, "Problem-Solver", 1000, "Lifelong Learner", 1000]}
+              sequence={["Developer", 1000, "Problem-Solver", 1000, "Curious Mind", 1000]}
               speed={50}
               repeat={Infinity}
               className="bg-gradient-to-b from-accent to-accent-shade bg-clip-text text-2xl font-semibold text-transparent sm:text-4xl"
